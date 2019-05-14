@@ -10,6 +10,8 @@ difficulty=$2
 tags=$3
 
 dir=`dirname $0`
+
+mkdir -p $dir/solutions/$name
 echo "[NAME](https://)" > $dir/solutions/$name/problem.md
 touch $dir/solutions/$name/solution.py
 
