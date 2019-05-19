@@ -12,7 +12,7 @@ tags=$3
 dir=`dirname $0`
 
 mkdir -p $dir/solutions/$name
-echo "[NAME](https://)" > $dir/solutions/$name/problem.md
+echo "[NAME](link)" > $dir/solutions/$name/problem.md
 touch $dir/solutions/$name/solution.py
 
 ln -sv ../../solutions/$name $dir/by-difficulty/$difficulty
