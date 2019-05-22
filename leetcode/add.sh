@@ -12,7 +12,7 @@ tags=$3
 dir=`dirname $0`
 
 mkdir -p $dir/solutions/$name
-echo "[NAME](link)" > $dir/solutions/$name/problem.md
+echo "[NAME](https://https://leetcode.com/problems/$name/)" > $dir/solutions/$name/problem.md
 touch $dir/solutions/$name/solution.py
 
 ln -sv ../../solutions/$name $dir/by-difficulty/$difficulty
