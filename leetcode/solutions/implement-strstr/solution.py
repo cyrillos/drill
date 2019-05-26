@@ -6,7 +6,8 @@ class Solution:
         elif len(b) == 0: return 0
         elif len(b) > len(a): return -1
         #
-        # May use KMP, but "easy" tag implies plain search :)
+        # Should use KMP, but as tag implies it needs
+        # to be easy.
         for i in range(0, len(a)):
             for j in range(0, len(b)):
                 if i + j >= len(a): return -1
@@ -15,3 +16,12 @@ class Solution:
             else:
                 return i
         return -1
+
+#data = [
+#    ["aabaaabaaac", "aabaaac"],
+#    ["mississippi", "pi"],
+#    ["mississippi", "issip"]
+#]
+#
+#for i in range(0, len(data)):
+#    print(Solution().strStr(data[i][0], data[i][1]))
