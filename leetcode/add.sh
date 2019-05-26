@@ -15,9 +15,13 @@ mkdir -p $dir/solutions/$name
 echo "[NAME](https://leetcode.com/problems/$name/)" > $dir/solutions/$name/problem.md
 touch $dir/solutions/$name/solution.py
 
-ln -sv ../../solutions/$name $dir/by-difficulty/$difficulty
+if [ "$difficulty" ] ; then
+	ln -sv ../../solutions/$name $dir/by-difficulty/$difficulty
+fi
 
-for tag in `echo $tags | tr , \\\n`; do
-	mkdir -pv $dir/by-tag/$tag
-	ln -sv ../../solutions/$name $dir/by-tag/$tag
-done
+if [ "$tags" ] ; then
+	for tag in `echo $tags | tr , \\\n`; do
+		mkdir -pv $dir/by-tag/$tag
+		ln -sv ../../solutions/$name $dir/by-tag/$tag
+	done
+fi
