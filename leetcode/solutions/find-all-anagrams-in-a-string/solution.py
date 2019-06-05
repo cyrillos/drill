@@ -6,27 +6,47 @@ class Solution:
 
         res = []
 
-        cnt_p = [0] * 26
-        cnt_s = [0] * 26
+        def op(v):
+            return ord(v) - ord('a')
+
+        hash_p = 0
+        hash_s = 0
+
+        for i in range(0, len(p)):
+            hash_p |= (1 << op(p[i]))
+            hash_s |= (1 << op(s[i]))
+
+        for i in range(0, len(s) - len(p)):
+            if hash_s == hash_p: res.append(i)
+            hash_s &= ~(1 << op(s[i]))
+            hash_s |=  (1 << op(s[i+len(p)]))
+        else:
+            if hash_s == hash_p: res.append(len(s)-len(p))
+        return res
+
+    def findAnagramsHashed(self, s: str, p: str) -> [int]:
+        if len(s) < len(p): return []
+        if len(s) == 0: return []
+        if len(p) == 0: return []
+
+        res = []
 
         def op(v):
             return ord(v) - ord('a')
 
-        def same(a, b):
-            for i in range(0, len(a)):
-                if a[i] != b[i]: return False
-            return True
+        hash_p = 0
+        hash_s = 0
 
         for i in range(0, len(p)):
-            cnt_p[op(p[i])] += 1
-            cnt_s[op(s[i])] += 1
+            hash_p += (1 << op(p[i]))
+            hash_s += (1 << op(s[i]))
 
         for i in range(0, len(s) - len(p)):
-            if same(cnt_s, cnt_p): res.append(i)
-            cnt_s[op(s[i])] -= 1
-            cnt_s[op(s[i+len(p)])] += 1
+            if hash_s == hash_p: res.append(i)
+            hash_s -=  (1 << op(s[i]))
+            hash_s +=  (1 << op(s[i+len(p)]))
         else:
-            if same(cnt_s, cnt_p): res.append(len(s)-len(p))
+            if hash_s == hash_p: res.append(len(s)-len(p))
         return res
 #
 #data = [
