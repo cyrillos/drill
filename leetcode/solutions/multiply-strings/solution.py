@@ -1,21 +1,31 @@
 class Solution:
-    #
-    # ROFL, it is accepted but for sure we need
-    # to decompose string into bytes and implement
-    # a real multiplication in a cycle. Thanks
-    # no Karatsuba multiplcation needed ;)
-    def multiply(self, num1: str, num2: str) -> str:
-        def atoi(s):
-            r = 0
-            for i in range(0, len(s)):
-                v = ord(s[i]) - ord('0')
-                r = 10 * r + v
-            return r
-        a = atoi(num1)
-        b = atoi(num2)
-        return str(a*b)
+    def multiply(self, a: str, b: str) -> str:
+        acc = [0] * (len(a) + len(b))
+
+        carry = 0
+        pos, off = 0, 0
+        for i in range(len(a)-1, -1, -1):
+            pos = off
+            for j in range(len(b)-1, -1, -1):
+                k = acc[pos] + int(a[i]) * int(b[j]) + carry
+                carry = k // 10
+                k = k - carry * 10
+                acc[pos], pos = k, pos+1
+            else:
+                acc[pos], carry = carry, 0
+                off += 1
+
+        res = "".join(map(lambda x: str(x), acc[::-1]))
+        for i in range(0, len(res)):
+            if res[i] != '0':
+                return res[i:]
+        return "0"
 
 data = [
+    ["123", "456"],
+    ["12", "98"],
+    ["99", "99"],
+    ["98", "9"],
     ["1", "2"],
     ["6", "4"],
 ]
