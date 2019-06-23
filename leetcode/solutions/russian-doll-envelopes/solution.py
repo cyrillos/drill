@@ -12,19 +12,14 @@ class Solution:
 
         a.sort(key=lambda x: (x[0],-x[1]))
 
-        d = [0] * (len(a) + 1)
-        d[1] = a[0][1]
-        pos = 1
+        d = [0] * len(a)
+        pos = 0
 
-        for i in range(1, len(a)):
-            j = bisect.bisect_right(d, a[i][1], 1, pos+1)
-            if j == pos+1:
-                if a[i][1] != d[j-1]: # eliminate duplicates
-                    d[j] = a[i][1]
-                    pos += 1
-            else:
-                if d[j-1] < a[i][1] and a[i][1] < d[j]:
-                    d[j] = a[i][1]
+        for i in range(0, len(a)):
+            j = bisect.bisect_left(d, a[i][1], 0, pos)
+            d[j] = a[i][1]
+            if pos == j:
+                pos += 1
         return pos
 
 data = [
