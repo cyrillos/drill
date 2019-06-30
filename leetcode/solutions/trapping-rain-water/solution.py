@@ -26,6 +26,36 @@ class Solution:
 
         return accum
 
+    #
+    # DP: Move two pointers at left and right,
+    # basically imagine you've a horizontal line
+    # between them with hight of lowest bar inbetween,
+    # then you simply accum the space left.
+    def trap_two_pointers(self, a):
+        if not a or len(a) < 3:
+            return 0
+
+        accum = 0
+        left_max = a[0]
+        right_max = a[-1]
+
+        l, r = 0, len(a)-1
+        while l < r:
+            if a[l] < a[r]:
+                if a[l] >= left_max:
+                    left_max = a[l]
+                else:
+                    accum += left_max - a[l]
+                l += 1
+            else:
+                if a[r] >= right_max:
+                    right_max = a[r]
+                else:
+                    accum += right_max - a[r]
+                r -= 1
+
+        return accum
+
     def trap(self, a):
         return self.trap_two_arrays(a)
 
