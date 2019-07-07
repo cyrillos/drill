@@ -13,7 +13,16 @@ dir=`dirname $0`
 
 mkdir -p $dir/solutions/$name
 echo "[NAME](https://leetcode.com/problems/$name/)" > $dir/solutions/$name/problem.md
-touch $dir/solutions/$name/solution.py
+cat <<EOF >>$dir/solutions/$name/solution.py
+class Solution:
+    def name(self):
+        return 0
+
+data = [
+]
+for i in range(0, len(data)):
+    print(Solution().name(data[i]))
+EOF
 
 if [ "$difficulty" ] ; then
 	ln -sv ../../solutions/$name $dir/by-difficulty/$difficulty
