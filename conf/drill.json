@@ -1,0 +1,20 @@
+{
+  "template": {
+    "python3": [
+      ["source", "copy", "conf/solution.py"],
+      ["text", "parse", "conf/problem.md"]
+    ]
+  },
+  "default": {
+    "category": "leetcode"
+  },
+  "leetcode": {
+    "language": "python3",
+    "basedir": "leetcode",
+    "solution": "solutions",
+    "symlinks": {
+        "difficulty": "by-difficulty",
+        "tag": "by-tag"
+    }
+  }
+}
