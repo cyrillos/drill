@@ -20,5 +20,13 @@
   "google": {
     "language": "python3",
     "basedir": "google"
+  },
+  "yandex": {
+    "language": "python3",
+    "basedir": "yandex"
+  },
+  "amazon": {
+    "language": "python3",
+    "basedir": "amazon"
   }
 }
