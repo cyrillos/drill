@@ -63,7 +63,7 @@ def process_input(args, conf):
         logging.error("conf: category '%s' missing", args.category)
         return False
 
-    if not conf["template"]:
+    if not conf.get("template"):
         logging.error("conf: 'template' missing")
         return False
 
@@ -72,7 +72,7 @@ def process_input(args, conf):
 
     if args.language:
         subconf["language"] = args.language
-    elif not subconf["language"]:
+    elif not subconf.get("language"):
         logging.error("conf: no 'language' defined for category '%s'",
                       args.category)
         return False
@@ -93,12 +93,12 @@ def process_input(args, conf):
             return False
 
     if args.difficulty:
-        if not subconf["symlinks"] or not subconf["symlinks"]["difficulty"]:
+        if not subconf.get("symlinks") or not subconf["symlinks"].get("difficulty"):
             logging.error("conf: difficulty requested but not present")
             return False
 
     if args.tag:
-        if not subconf["symlinks"] or not subconf["symlinks"]["tag"]:
+        if not subconf.get("symlinks") or not subconf["symlinks"].get("tag"):
             logging.error("conf: tag requested but not present")
             return False
 
@@ -111,12 +111,12 @@ if args.cmd == "new":
     template = conf["template"]
     subconf = conf[args.category]
 
-    basedir = subconf["basedir"]
-    if not basedir:
+    if not subconf.get("basedir"):
         logging.error("No 'basedir' found for category '%s'", args.category)
         sys.exit(1)
+    basedir = subconf["basedir"]
 
-    if subconf["solution"]:
+    if subconf.get("solution"):
         solutiondir = os.path.join(basedir, subconf["solution"])
     else:
         solutiondir = basedir
@@ -145,7 +145,7 @@ if args.cmd == "new":
             out.close()
             logging.info("%10s: %s -> %s", tmpl[1], tmpl[2], dest)
 
-    if subconf["symlinks"]:
+    if subconf.get("symlinks"):
         if args.difficulty:
             path = os.path.join(basedir,
                                 subconf["symlinks"]["difficulty"],

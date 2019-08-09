@@ -16,5 +16,9 @@
         "difficulty": "by-difficulty",
         "tag": "by-tag"
     }
+  },
+  "google": {
+    "language": "python3",
+    "basedir": "google"
   }
 }
