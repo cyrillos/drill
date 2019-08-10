@@ -1,1 +1,1 @@
-[NAME](https://https://leetcode.com/problems/{name}/)
+[NAME](https://leetcode.com/problems/{name}/)
