@@ -3,6 +3,11 @@
     "python3": [
       ["source", "copy", "conf/solution.py"],
       ["text", "parse", "conf/problem.md"]
+    ],
+    "cpp": [
+      ["text", "parse", "conf/problem.md"],
+      ["source", "copy", "conf/solution.cpp"]
+      ["source", "copy", "conf/Makefile"]
     ]
   },
   "default": {
