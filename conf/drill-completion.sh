@@ -22,6 +22,10 @@ _drill()
 		COMPREPLY=($(compgen -W '--category --language --name --difficulty --tag' -- $cur))
 		return
 		;;
+	drill)
+		COMPREPLY=($(compgen -W 'new' -- $cur))
+		return
+		;;
 	esac
 
 	return

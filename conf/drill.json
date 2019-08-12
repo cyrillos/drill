@@ -6,7 +6,7 @@
     ],
     "cpp": [
       ["text", "parse", "conf/problem.md"],
-      ["source", "copy", "conf/solution.cpp"]
+      ["source", "copy", "conf/solution.cpp"],
       ["source", "copy", "conf/Makefile"]
     ]
   },
