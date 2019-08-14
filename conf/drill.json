@@ -30,6 +30,10 @@
     "language": "python3",
     "basedir": "yandex"
   },
+  "codility": {
+    "language": "cpp",
+    "basedir": "codility"
+  },
   "amazon": {
     "language": "python3",
     "basedir": "amazon"
