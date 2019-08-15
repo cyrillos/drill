@@ -34,6 +34,10 @@
     "language": "cpp",
     "basedir": "codility"
   },
+  "facebook": {
+    "language": "cpp",
+    "basedir": "facebook"
+  },
   "amazon": {
     "language": "python3",
     "basedir": "amazon"
