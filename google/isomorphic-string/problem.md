@@ -22,6 +22,6 @@ Explanation: ab -> ac -> bc -> ba
 Example 3:
 ```
 Input: s = "abcdefghijklmnopqrstuvwxyz", t = "bcdefghijklmnopqrstuvwxyza"
-Output: false
+Output: true
 ```
 Both strings contain only lowercase English letters.
