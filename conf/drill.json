@@ -38,6 +38,10 @@
     "language": "cpp",
     "basedir": "facebook"
   },
+  "geeksforgeeks": {
+    "language": "cpp",
+    "basedir": "geeksforgeeks"
+  },
   "amazon": {
     "language": "python3",
     "basedir": "amazon"
