@@ -1,33 +1,38 @@
 _drill()
 {
-	local cmd cur prev words cword split=false
+	local cur prev
 
-	if type -t _init_completion >/dev/null; then
-		_init_completion -n = || return
-	else
-		# manual initialization for older bash completion versions
-		COMPREPLY=()
-		cur="${COMP_WORDS[COMP_CWORD]}"
-		prev="${COMP_WORDS[COMP_CWORD-1]}"
-	fi
+	cur=${COMP_WORDS[COMP_CWORD]}
+	prev=${COMP_WORDS[COMP_CWORD-1]}
+	options="--category --language --name --difficulty --tag"
 
-	if [ $COMP_CWORD -gt 1 ] ; then
-		cmd="${COMP_WORDS[1]}"
-	else
-		cmd="$prev"
-	fi
-
-	case "$cmd" in
-	new)
-		COMPREPLY=($(compgen -W '--category --language --name --difficulty --tag' -- $cur))
-		return
+	case ${COMP_CWORD} in
+	1)
+		COMPREPLY=($(compgen -W "new" -- ${cur}))
 		;;
-	drill)
-		COMPREPLY=($(compgen -W 'new' -- $cur))
-		return
+	2)
+		case ${prev} in
+		new)
+			COMPREPLY=($(compgen -W "${options}" -- ${cur}))
+			;;
+		esac
 		;;
-	esac
-
-	return
-} &&
+	*)
+		case ${prev} in
+		--category)
+			COMPREPLY=($(compgen -W "leetcode google yandex codility facebook geeksforgeeks amazon" -- ${cur}))
+			;;
+		--language)
+			COMPREPLY=($(compgen -W "python3 cpp" -- ${cur}))
+			;;
+		--difficulty)
+			COMPREPLY=($(compgen -W "easy medium hard" -- ${cur}))
+			;;
+		*)
+			COMPREPLY=($(compgen -W "${options}" -- ${cur}))
+			;;
+		esac
+            	;;
+    	esac
+}
 complete -F _drill drill
