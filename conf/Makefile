@@ -1,4 +1,4 @@
-CXXFLAGS := -Wall
+CXXFLAGS := -ggdb3 -O0 -Wall
 CC := g++
 
 all: solution
