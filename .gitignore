@@ -1,5 +1,4 @@
 .git-ignore/
-solution
 *.swp
 *.pyc
 *.o
