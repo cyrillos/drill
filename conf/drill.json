@@ -14,7 +14,7 @@
     "category": "leetcode"
   },
   "leetcode": {
-    "language": "python3",
+    "language": "cpp",
     "basedir": "leetcode",
     "solution": "solutions",
     "symlinks": {
@@ -45,5 +45,9 @@
   "amazon": {
     "language": "python3",
     "basedir": "amazon"
+  },
+  "codeforces": {
+    "language": "cpp",
+    "basedir": "codeforces"
   }
 }
