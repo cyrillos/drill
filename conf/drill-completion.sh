@@ -20,7 +20,7 @@ _drill()
 	*)
 		case ${prev} in
 		--category)
-			COMPREPLY=($(compgen -W "leetcode google yandex codility facebook geeksforgeeks amazon" -- ${cur}))
+			COMPREPLY=($(compgen -W "leetcode google yandex codility facebook geeksforgeeks amazon codeforces" -- ${cur}))
 			;;
 		--language)
 			COMPREPLY=($(compgen -W "python3 cpp" -- ${cur}))
