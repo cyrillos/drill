@@ -117,6 +117,50 @@ TreeNode* stringToTreeNode(string input) {
 	return root;
 }
 
+class SolutionRecursive {
+private:
+	enum State {
+		NONE	= 0,
+		COVERED	= 1,
+		CAMERA	= 2,
+	};
+
+	State dfs(TreeNode *node, int& res)
+	{
+		if (!node)
+			return COVERED;
+
+		State left = dfs(node->left, res);
+		State right = dfs(node->right, res);
+
+		if (left == NONE || right == NONE) {
+			res++;
+			return CAMERA;
+		}
+
+		if (left == CAMERA || right == CAMERA)
+			return COVERED;
+
+		return NONE;
+	}
+
+public:
+	int minCameraCover(TreeNode *root)
+	{
+		int res = 0;
+
+		if (!root)
+			return 0;
+		if (!root->left && !root->right)
+			return 1;
+
+		if (dfs(root, res) == NONE)
+			res++;
+
+		return res;
+	};
+};
+
 class Solution {
 public:
 	int minCameraCover(TreeNode *root) {
@@ -287,9 +331,11 @@ int main()
 		"[1,2,3,4,null,null,null,5,6,null,7,null,8]", // 3
 	};
 	Solution solution;
+	SolutionRecursive solution_recursive;
 	for (const auto &values: input) {
 		TreeNode *root = stringToTreeNode(values);
 		cout << root << " => " << endl << solution.minCameraCover(root) << endl << "---" << endl;
+		cout << root << " => " << solution_recursive.minCameraCover(root) << endl;
 	}
 	return 0;
 }
