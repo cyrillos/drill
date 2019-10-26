@@ -28,6 +28,9 @@ _drill()
 		--difficulty)
 			COMPREPLY=($(compgen -W "easy medium hard" -- ${cur}))
 			;;
+		--tags)
+			COMPREPLY=($(compgen -W "array bit-manipulation divide-and-conquer heap math stack two-pointers backtracking breadth-first-search dynamic-programming linked-list sliding-window string binary-search depth-first-search hash-table linked-lists sort tree" -- ${cur}))
+			;;
 		*)
 			COMPREPLY=($(compgen -W "${options}" -- ${cur}))
 			;;
