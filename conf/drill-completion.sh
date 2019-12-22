@@ -6,6 +6,16 @@ _drill()
 	prev=${COMP_WORDS[COMP_CWORD-1]}
 	options="--category --language --name --difficulty --tag"
 
+	cats="leetcode google yandex codility facebook geeksforgeeks amazon codeforces"
+	langs="python3 cpp"
+	diffs="easy medium hard"
+
+	tag="array bit-manipulation divide-and-conquer heap math stack"
+	tag="${tag} two-pointers backtracking breadth-first-search"
+	tag="${tag} dynamic-programming linked-list sliding-window string"
+	tag="${tag} binary-search depth-first-search hash-table linked-lists"
+	tag="${tag} sort tree"
+
 	case ${COMP_CWORD} in
 	1)
 		COMPREPLY=($(compgen -W "new" -- ${cur}))
@@ -20,16 +30,16 @@ _drill()
 	*)
 		case ${prev} in
 		--category)
-			COMPREPLY=($(compgen -W "leetcode google yandex codility facebook geeksforgeeks amazon codeforces" -- ${cur}))
+			COMPREPLY=($(compgen -W "${cats}" -- ${cur}))
 			;;
 		--language)
-			COMPREPLY=($(compgen -W "python3 cpp" -- ${cur}))
+			COMPREPLY=($(compgen -W "${langs}" -- ${cur}))
 			;;
 		--difficulty)
-			COMPREPLY=($(compgen -W "easy medium hard" -- ${cur}))
+			COMPREPLY=($(compgen -W "${diffs}" -- ${cur}))
 			;;
-		--tags)
-			COMPREPLY=($(compgen -W "array bit-manipulation divide-and-conquer heap math stack two-pointers backtracking breadth-first-search dynamic-programming linked-list sliding-window string binary-search depth-first-search hash-table linked-lists sort tree" -- ${cur}))
+		--tag)
+			COMPREPLY=($(compgen -W "${tag}" -- ${cur}))
 			;;
 		*)
 			COMPREPLY=($(compgen -W "${options}" -- ${cur}))
