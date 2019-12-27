@@ -25,8 +25,8 @@ for cmd in ['new']:
                      required = True)
     spp.add_argument('--difficulty', dest = 'difficulty', help = 'Problem difficulty',
                      required = False)
-    spp.add_argument('--tag', dest = 'tag', help = 'Problem tags (tag1,tag2)',
-                     required = False)
+    spp.add_argument('--tag', action='append', dest = 'tag',
+                     help = 'Problem tag', required = False)
 
 logging.basicConfig(format = '%(asctime)s %(filename)s %(funcName)s %(message)s',
                     datefmt = '%m/%d/%Y %H:%M:%S', level = logging.DEBUG)
@@ -157,7 +157,7 @@ if args.cmd == "new":
             os.symlink(src_path, dst_path)
             logging.info("%10s: %s -> %s", "symlink", src_path, dst_path)
         if args.tag:
-            for tag in args.tag.split(","):
+            for tag in args.tag:
                 path = os.path.join(basedir,
                                     subconf["symlinks"]["tag"],
                                     tag)
