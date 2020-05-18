@@ -14,7 +14,7 @@ _drill()
 	tag="${tag} two-pointers backtracking breadth-first-search"
 	tag="${tag} dynamic-programming linked-list sliding-window string"
 	tag="${tag} binary-search depth-first-search hash-table linked-lists"
-	tag="${tag} sort tree"
+	tag="${tag} sort tree union-find"
 
 	case ${COMP_CWORD} in
 	1)
