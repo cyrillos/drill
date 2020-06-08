@@ -37,30 +37,18 @@ public:
 		if (nums.size() < 2)
 			return true;
 
-		for (int i = nums.size()-1; i >= 0; i--) {
-			if (nums[i] > 0)
-				continue;
-
-			// Just try to find suitable left position
-			// to jump from to reach position after i
-			// (or end of array).
-			bool found = false;
-			for (int j = i-1; j >= 0; j--) {
-				if (nums[j] > (i - j)) {
-					found = true;
-					break;
-				} else if (nums[j] == (i - j)) {
-					if (i == nums.size()-1) {
-						found = true;
-						break;
-					}
-				}
-			}
-			if (!found)
-				return false;
+		//
+		// Just find out how many steps
+		// we need to jump
+		int need = 0;
+		for (int i = nums.size()-2; i >= 0; i--) {
+			if (nums[i] <= need)
+				need++;
+			else
+				need = 0;
 		}
 
-		return true;
+		return need == 0;
 	}
 };
 
