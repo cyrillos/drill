@@ -1,5 +1,5 @@
-[Same Tree](https://leetcode.com/problems/same-tree/)
-===========
+[100. Same Tree](https://leetcode.com/problems/same-tree/)
+================
 
 Given two binary trees, write a function to check if they are the same or not.
 

@@ -1,5 +1,5 @@
-[Sqrt(x)](https://leetcode.com/problems/sqrtx/)
-=========
+[69. Sqrt(x)](https://leetcode.com/problems/sqrtx/)
+=============
 Implement `int sqrt(int x)`.
 
 Compute and return the square root of x, where x is guaranteed

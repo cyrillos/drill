@@ -1,5 +1,5 @@
-[Dungeon Game](https://leetcode.com/problems/dungeon-game/)
-==============
+[174. Dungeon Game](https://leetcode.com/problems/dungeon-game/)
+===================
 
 The demons had captured the princess (P) and imprisoned her in the
 bottom-right corner of a dungeon. The dungeon consists of M x N rooms

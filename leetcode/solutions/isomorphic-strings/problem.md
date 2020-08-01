@@ -1,5 +1,5 @@
-[Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
-====================
+[205. Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/)
+=========================
 
 Given two strings `s` and `t`, determine if they are isomorphic.
 Two strings are isomorphic if the characters in `s` can be replaced

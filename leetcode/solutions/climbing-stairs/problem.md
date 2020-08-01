@@ -1,5 +1,5 @@
-[Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
-=================
+[70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+=====================
 
 You are climbing a stair case. It takes `n` steps to reach to the top.
 

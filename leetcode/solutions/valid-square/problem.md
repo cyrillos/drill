@@ -1,5 +1,5 @@
-[Valid Square](https://leetcode.com/problems/valid-square/)
-==============
+[593. Valid Square](https://leetcode.com/problems/valid-square/)
+===================
 
 Given the coordinates of four points in 2D space, return
 whether the four points could construct a square.

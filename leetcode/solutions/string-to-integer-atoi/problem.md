@@ -1,5 +1,5 @@
-[String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/)
-==========================
+[8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/)
+=============================
 Implement `atoi` which converts a string to an integer.
 
 The function first discards as many whitespace characters as necessary until

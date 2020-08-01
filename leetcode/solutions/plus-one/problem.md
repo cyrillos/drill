@@ -1,5 +1,5 @@
-[Plus One](https://https://leetcode.com/problems/plus-one/)
-==========
+[66. Plus One](https://leetcode.com/problems/plus-one/)
+==============
 Given a non-empty array of digits representing a non-negative integer,
 plus one to the integer.
 
