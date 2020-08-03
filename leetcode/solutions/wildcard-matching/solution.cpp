@@ -5,6 +5,35 @@
 
 using namespace std;
 
+#if 0
+// A way more simplier solution from other developers
+class Solution {
+public:
+	bool isMatch(string s, string p) {
+		int i = 0, j = 0, iStar = -1, jStar = -1;
+		while(i < s.size()) {
+			if(s[i] == p[j] || p[j] == '?') {
+				i++;
+				j++;
+			} else if (p[j] == '*') {
+				iStar = i;
+				jStar = j++;
+			} else if(iStar >= 0) {
+				i = ++iStar;
+				j = jStar + 1;
+			} else { 
+				return false;
+			}
+		}
+
+		while(p[j] == '*')
+			j++;
+
+		return j == p.size();
+    }
+};
+#endif
+
 class Solution {
 public:
 	bool isMatch(string s, string t) {
