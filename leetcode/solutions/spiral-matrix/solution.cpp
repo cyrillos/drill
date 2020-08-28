@@ -58,7 +58,7 @@ public:
 		    return res;
 	    }
 
-	    res.resize(size + size/2);
+	    res.resize(size);
 
 	    int c[2] = {0, nr_cols-1};
 	    int r[2] = {0, nr_rows-1};
@@ -76,6 +76,8 @@ public:
 		    r[0]++;
 		    // r = {1, 2}
 
+		    if (c[0] > c[1] || r[0] > r[1]) break;
+
 		    // Vertical top down
 		    for (int i = r[0]; i <= r[1]; i++)
 			    res[pos++] = m[i][c[1]];
@@ -83,6 +85,7 @@ public:
 		    c[1]--;
 		    // c = {0 ,1}
 
+		    if (c[0] > c[1] || r[0] > r[1]) break;
 		    // -- || --
 
 		    // c = {0, 1}
@@ -95,6 +98,7 @@ public:
 		    r[1]--;
 		    // r = {1, 1}
 
+		    if (c[0] > c[1] || r[0] > r[1]) break;
 		    // Vertical down top
 		    for (int i = r[1]; i >= r[0]; i--)
 			    res[pos++] = m[i][c[0]];
@@ -105,9 +109,9 @@ public:
 
 		    // c = {1, 1}
 		    // r = {1, 1}
+		    if (c[0] > c[1] || r[0] > r[1]) break;
 	    }
 
-	    res.resize(size);
 	    return res;
     }
 };
@@ -123,6 +127,11 @@ int main()
 			{1, 2, 3, 4},
 			{5, 6, 7, 8},
 			{9,10,11,12},
+		}, {
+			{1, 2, 3 },
+			{4, 5, 6 },
+			{7, 8, 9 },
+			{10,11,12},
 		}, {
 			{1, 2},
 			{3, 4},
