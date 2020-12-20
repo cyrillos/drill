@@ -15,6 +15,7 @@ _drill()
 	tag="${tag} dynamic-programming linked-list sliding-window string"
 	tag="${tag} binary-search depth-first-search hash-table linked-lists"
 	tag="${tag} sort tree union-find greedy graph"
+	tag="${tag} binary-indexed-tree segment-tree line-sweep"
 
 	case ${COMP_CWORD} in
 	1)
