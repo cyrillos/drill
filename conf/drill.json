@@ -4,9 +4,9 @@
       ["source", "copy", "conf/solution.py"],
       ["text", "parse", "conf/problem.md"]
     ],
-    "cpp": [
+    "cc": [
       ["text", "parse", "conf/problem.md"],
-      ["source", "copy", "conf/solution.cpp"],
+      ["source", "copy", "conf/solution.cc"],
       ["source", "copy", "conf/Makefile"]
     ]
   },
@@ -14,7 +14,7 @@
     "category": "leetcode"
   },
   "leetcode": {
-    "language": "cpp",
+    "language": "cc",
     "basedir": "leetcode",
     "solution": "solutions",
     "symlinks": {
@@ -31,15 +31,15 @@
     "basedir": "yandex"
   },
   "codility": {
-    "language": "cpp",
+    "language": "cc",
     "basedir": "codility"
   },
   "facebook": {
-    "language": "cpp",
+    "language": "cc",
     "basedir": "facebook"
   },
   "geeksforgeeks": {
-    "language": "cpp",
+    "language": "cc",
     "basedir": "geeksforgeeks"
   },
   "amazon": {
@@ -47,7 +47,7 @@
     "basedir": "amazon"
   },
   "codeforces": {
-    "language": "cpp",
+    "language": "cc",
     "basedir": "codeforces"
   }
 }

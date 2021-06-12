@@ -3,7 +3,7 @@ CC := g++
 
 all: solution
 
-solution: solution.cpp
+solution: solution.cc
 	$(CC) $(CXXFLAGS) -o $@ $^
 
 clean:
