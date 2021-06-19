@@ -9,6 +9,7 @@
 class Solution {
 public:
 	ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+#if 0
 		ListNode *res = NULL;
 
 		if (!headA || !headB)
@@ -48,5 +49,30 @@ public:
 		}
 
 		return res;
+#else
+		//
+		// Just realized that we can use two pointers
+		// instead, in case if lists are intersected
+		// then tere will be a point where they get
+		// meet.
+		//
+		// a -> a -> a ->
+		//               \
+		//                c -> c ->
+		//               /         \
+		//      b -> b ->           \
+		//      ^                   |
+		//      +-------------------+
+		//
+		auto a = headA;
+		auto b = headB;
+
+		while (a != b) {
+			a = a ? a->next : headB;
+			b = b ? b->next : headA;
+		}
+
+		return b;
+#endif
 	}
 };
