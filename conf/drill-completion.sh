@@ -16,7 +16,7 @@ _drill()
 	tag="${tag} binary-search depth-first-search hash-table linked-lists"
 	tag="${tag} sort tree union-find greedy graph prefix-sum"
 	tag="${tag} binary-indexed-tree binary-tree segment-tree line-sweep"
-	tag="${tag} string-matching hash-function"
+	tag="${tag} string-matching hash-function binary-search-tree"
 
 	case ${COMP_CWORD} in
 	1)
