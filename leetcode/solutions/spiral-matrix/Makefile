@@ -1,4 +1,4 @@
-CXXFLAGS := -ggdb3 -O0 -Wall
+CXXFLAGS := -ggdb3 -O0 -Wall -fsanitize=address
 CC := g++
 
 all: solution
