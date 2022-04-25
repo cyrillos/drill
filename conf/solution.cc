@@ -37,13 +37,13 @@ public:
 
 int main()
 {
-	vector<int> input[] = {
+	vector<int> data[] = {
 		{}, // 0
 	};
 	Solution solution;
-	for (const auto& nums: input) {
-		cout << nums << " => " <<
-			solution.name(nums) << endl;
+	for (auto& d: input) {
+		cout << d << " => " <<
+			solution.name(d) << endl;
 	}
 	return 0;
 }
