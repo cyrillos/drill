@@ -41,7 +41,7 @@ int main()
 		{}, // 0
 	};
 	Solution solution;
-	for (auto& d: input) {
+	for (auto& d: data) {
 		cout << d << " => " <<
 			solution.name(d) << endl;
 	}
